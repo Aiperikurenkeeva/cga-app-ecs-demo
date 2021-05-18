@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>CGA: A To-Do List</title>
+  <link href='https://fonts.googleapis.com/css?family=Duru Sans' rel='stylesheet'>
+  <link href="/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>CloudGateAcademy</h1>
+    <h2>MY TO DO LIST!</h2>
+    <form action="/addtask" method="POST">
+      <input class="newtask" test="text" name="newtask" placeholder="Add a task!">
+      <button class="addbutton">Add</button><br />
+    <% for( var i = 0; i < task.length; i++){ %>
+      <li><input class="check" type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %></li>
+    <% } %>
+      <br /><button class="completed" formaction="/removetask" type="submit">Complete Checked Tasks</button>
+    </form>
+    <h2>Completed</h2>
+    <% for(var i = 0; i < complete.length; i++){ %>
+      <li><input class="checked" type="checkbox" checked><%= complete[i] %> </li>
+    <% } %>
+    <p class="credit">Download this app here<a href="https://github.com/almasbg/cga-app-practice">cga-app</a>; google is your friend <a href="https://www.google.com/">to do app</a>!</a>
+  </div>
+</body>
+</html>
