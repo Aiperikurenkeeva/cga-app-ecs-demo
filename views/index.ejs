@@ -21,6 +21,11 @@
     <% for(var i = 0; i < complete.length; i++){ %>
       <li><input class="checked" type="checkbox" checked><%= complete[i] %> </li>
     <% } %>
+    <%
+      let pack = require('./package.json');
+      console.log("Project name:");
+      console.log(pack.name);
+    %>
     <p class="credit">Download this app here<a href="https://github.com/almasbg/cga-app-practice">cga-app</a>; google is your friend <a href="https://www.google.com/">to do app</a>!</a>
   </div>
 </body>
