@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - "echo Logging in to ECR Registry" #need to login to push the image
+      - $(aws ecr get-login --region us-east-1 --no-include-email)
+
+  build:
+    commands:
+      - "echo Build started on `date`"
+      - "echo Building docker image"
+      - "docker build -t cga-web-ecs ." #it will use dockerfile to build the image
+      - "docker tag cga-web-ecs:latest 846562901861.dkr.ecr.us-east-1.amazonaws.com/cga-web-ecs:latest"
+
+  post_build:
+    commands:
+      - "echo Build is complete on `date`"
+      - "echo pushing the docker image"
+      - "docker push 846562901861.dkr.ecr.us-east-1.amazonaws.com/cga-web-ecs:latest"

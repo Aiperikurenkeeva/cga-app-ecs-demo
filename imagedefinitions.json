@@ -1,0 +1,6 @@
+[
+ {
+   "name":"cga-app",
+   "imageUri": "846562901861.dkr.ecr.us-east-1.amazonaws.com/cga-web-ecs:latest"
+ }
+]
